@@ -1,0 +1,157 @@
+/* General Body Styling */
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+    font-family: 'Bona Nova', sans-serif;
+}
+
+/* TOP BANNER */
+.top-banner {
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 70px;
+}
+
+.details-title {
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 40px;
+}
+
+/* NAVIGATION BAR */
+.navbar-container {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f7f7f7;
+    justify-content: center;
+}
+
+.nav-list li {
+    list-style: none;
+    margin: 0 15px;
+    transition: 0.5s;
+}
+
+.nav-list li a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 18px;
+    color: #333;
+    transition: 0.5s;
+    border: none;
+}
+
+/* Hover Effects */
+.nav-list:hover li a {
+    transform: scale(1.5);
+    opacity: 0.2;
+    filter: blur(5px);
+}
+
+.nav-list li a:hover {
+    transform: scale(1.5);
+    opacity: 1;
+    filter: blur(0);
+    color: #fff;
+}
+
+.nav-list li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333; /* Background color for hover effect */
+    transition: transform 0.5s ease-in-out, background 0.5s ease-in-out;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+}
+
+.nav-list li a:hover::before {
+    transition: transform 0.5s;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* RSVP BUTTON */
+.rsvp-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid #6f6f6f;
+    color: #6f6f6f;
+    font-family: 'Bona Nova', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* DATE BUTTON */
+.date-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid #6f6f6f;
+    color: #6f6f6f;
+    font-family: 'Bona Nova', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.rsvp-btn:hover, .date-btn:hover {
+    background-color: #6f6f6f;
+    color: white;
+}
+
+/* RSVP Bottom Button */
+.rsvp_bottom-btn {
+    position: relative;
+    margin-top: 20px;
+    padding: 20px 40px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+    font-family: 'Bona Nova', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.rsvp_bottom-btn:hover {
+    background-color: #6f6f6f;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Bona Nova', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin-top: 30px;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+   
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/pinetree.png" type="image/png">
+        <link rel="stylesheet" href="/templates/style.css">
+   </head>
+   
+   <style>
+            /* MAIN CONTENT */
+            .main-content {
+                background-image: url('images/homephoto.jpg');
+                background-size: cover; /* Ensure the image covers the entire screen */
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 120vh; /* Full height of the viewport */
+                
+            }
+
+            /* CONTACT INFO */
+            .contact-info {
+                font-family: 'Bona Nova', sans-serif;
+                font-size: 18px;
+                color: #333;
+                background-color: #f7f7f7;
+                margin-bottom: 20px; /* Add some space below */
+                margin-top: 5in
+            }
+            /* TEXT FORMAT */
+            
+            .text-image-container {
+                display: flex;
+                justify-content: space-between; /* Space between text and image */
+                align-items: center; /* Vertically center items */
+                width: 100%; /* Full width of the container */
+                height: 500px; /* Adjust height based on your preference */
+                background-image: url('images/bg3.png'); /* Background image */
+                background-repeat: no-repeat; /* Prevent background from repeating */
+                background-size: auto; /* Keep the background image at its original size */
+                background-position: center; /* Center the background image */
+                padding: 20px; /* Add padding to create some space inside the container */
+            }
+
+            .text-names {
+                font-size: 60px;
+                font-family: 'Bona Nova', sans-serif;
+                text-transform: uppercase;
+                color: #333;
+                flex: 1; /* Allow the text to take up available space */
+                text-align: center; /* Align the text to the left */
+                padding-right: 20px; /* Space between text and image */
+                z-index: 1; /* Ensure the text stays on top of the background */
+            }
+
+            .image-container {
+                flex-shrink: 0; /* Prevent the image from shrinking */
+                z-index: 1; /* Ensure the image stays on top of the background */
+            }
+
+            .right-image {
+                max-width: 500px; /* Adjust image size */
+                height: auto; /* Maintain aspect ratio */
+            }
+
+            .text-date div {
+                text-align: center;
+                font-size: 40px;
+                font-family: 'Bona Nova', sans-serif;
+                text-transform: uppercase;
+                margin-top: 100px;
+                color: #333;
+            }
+
+            /* TIMER */
+            .timer {
+                text-align: center;
+                font-size: 28px;
+                color: #333;
+                font-family: 'Bona Nova', sans-serif;
+                margin-top: 20px;
+            }
+
+
+            /* FOOTER */
+            footer {
+                text-align: center;
+                padding: 20px;
+                font-family: 'Bona Nova', sans-serif;
+                background-color: #f7f7f7;
+                color: #333;
+            }
+
+            .footer {
+                        margin-top: 20px; /* Adjust this value to control the spacing */}
+            footer img {
+                background-size: cover; /* Ensure the image covers the entire screen */
+                background-position: center;
+            }
+
+   </style>
+    
+    <body>
+        <div id="header-container"></div> 
+        <script src="templates/header.js"></script>
+
+        <!-- Main content area -->
+        <div class="main-content">
+        </div>
+
+        <div class="text-image-container">
+            <div class="text-names">Casey Broussard <br>& <br>Luciano Pinheiro</div>
+        </div>
+        
+        <div class="text-date">
+            <div>November, 8 2025</div>
+            <button class = 'rsvp_bottom-btn'>RSVP</button>
+        </div>
+        
+        
+        <!-- Timer Section -->
+        <div class="timer" id="countdown-timer">
+            <span id="time"></span>
+        </div>
+
+        <footer>
+            <img src="images/rio.jpg" alt="Footer Image">
+            <div class="footer">Designed by Luciano & Casey</div>
+        </footer>
+        <script>
+            // Countdown to November 8, 2025
+            const countDownDate = new Date("Nov 8, 2025 00:00:00").getTime();
+
+            const countdownFunction = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("time").innerHTML = days + " days " + hours + " hours " 
+                + minutes + " minutes " + seconds + " seconds ";
+
+                // If the countdown is finished
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.getElementById("time").innerHTML = "Event has passed";
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>

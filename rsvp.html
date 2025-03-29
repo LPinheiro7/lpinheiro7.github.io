@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/pinetree.png" type="image/png">
+    <link rel="stylesheet" href="templates/style.css">
+    <style>
+        /* Top Image Section */
+        .top-image {
+            margin-top: 25px;
+            background-image: url('images/underconstruction1.jpg');
+            background-size: contain; /* Fit the image within the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 60vh; /* Adjust height as needed */
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container Styling */
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .container img {
+            max-width: 50%;
+            height: auto;
+            flex-shrink: 0; /* Prevent the image from shrinking */
+        }
+
+        .text {
+            padding: 20px;
+            width: 50%; /* Set a fixed width for the text container */
+            box-sizing: border-box; /* Include padding in the width calculation */
+        }
+
+        .left {
+            order: 1;
+        }
+
+        .right {
+            order: 2;
+        }
+
+        /* Details Title Styling */
+        .details-title {
+            background-color: #f7f7f7;
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Petit Formal Script', cursive;
+            font-size: 40px;
+        }
+
+        /* Details Text Styling */
+        .details-text {
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .construction-message {
+            font-family: 'Bona Nova', sans-serif;
+            font-size: 20px;
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f7f7f7;
+
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Bona Nova', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin-top: 30px; /* Add margin above the footer */
+        }
+
+        .footer {
+            margin: 0; /* Reset margin for the footer text */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet"> <!-- Add Bona Nova font -->
+</head>
+<body>
+    <div id="header-container"></div> 
+    <script src="templates/header.js"></script>
+    <div class="top-image"></div>
+
+
+</body>
+</html>

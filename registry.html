@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/pinetree.png" type="image/png">
+    <link rel="stylesheet" href="templates/style.css">
+    <style>
+        /* Top Image Section */
+        .top-image {
+            background-image: url('images/registry.jpeg');
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 60vh;
+        }
+
+        /* App Icon Grid */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .app-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.05);
+        }
+
+        .app-icon img {
+            width: 160px;
+            height: 160px;
+            border-radius: 18px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .app-icon span {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            max-width: 80px;
+            word-wrap: break-word;
+        }
+
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Bona Nova', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin: 0;
+        }
+
+        .top-banner {
+            text-align: center;
+            margin: 30px 0;
+            font-family: 'Petit Formal Script', cursive;
+            font-size: 40px;
+        }
+        footer {
+                text-align: center;
+                padding: 20px;
+                font-family: 'Bona Nova', sans-serif;
+                background-color: #f7f7f7;
+                color: #333;
+            }
+    </style>
+    <link rel="stylesheet" href="/templates/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header-container"></div> 
+    <script src="templates/header.js"></script>
+    <div class="top-image"></div>
+
+    <div class="top-banner">
+        <h1>Registry</h1>
+    </div>
+
+    <!-- App Icon Grid -->
+    <div class="app-grid">
+        <!-- Row 1 -->
+        <a href="https://www.zola.com/registry/lucianoandcasey" target="_blank" class="app-icon">
+            <img src="images/zola.png" alt="App 1">
+            
+        </a>
+        <a href="https://www.anthropologie.com/registry/listing?registryId=E13274F2F2A6" target="_blank" class="app-icon">
+            <img src="images/anthro.png" alt="App 2">
+           
+        </a>
+        <a href="https://registry.theknot.com/casey-broussard-luciano-pinheiro-october-2025-tx/67426420" target="_blank" class="app-icon">
+            <img src="images/theknot.png" alt="App 3">
+           
+        </a>
+        
+        <!-- Row 2 -->
+        <a href="https://www.zarahome.com/us/wishlist/yYXaOuMQMMeMM7zO4xSCeQ?utm_campaign=wishlistShare&utm_source=sharing&utm_medium=sharing_web_desktop" target="_blank" class="app-icon">
+            <img src="images/zara.png" alt="App 4">
+         
+        </a>
+        <a href="https://www.myregistry.com/giftlist/caseyandluciano" target="_blank" class="app-icon">
+            <img src="images/myregistry.png" alt="App 5">
+         
+        </a>
+        <a href="https://www.amazon.com/wedding/share/caseyandluciano" target="_blank" class="app-icon">
+            <img src="images/amazon.png" alt="App 6">
+          
+        </a>
+    </div>
+    
+    <footer>
+        <div class="footer">Designed by Luciano & Casey</div>
+    </footer>
+
+</body>
+</html>

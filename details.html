@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/pinetree.png" type="image/png">
+    <link rel="stylesheet" href="templates/style.css">
+    <style>
+        /* Top Image Section */
+        .top-image {
+            background-image: url('images/lakehousesketch.png');
+            background-size: contain; /* Fit the image within the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 60vh; /* Adjust height as needed */
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container Styling */
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .container img {
+            max-width: 50%;
+            height: auto;
+            flex-shrink: 0; /* Prevent the image from shrinking */
+        }
+
+        .text {
+            padding: 20px;
+            width: 50%; /* Set a fixed width for the text container */
+            box-sizing: border-box; /* Include padding in the width calculation */
+        }
+
+        .left {
+            order: 1;
+        }
+
+        .right {
+            order: 2;
+        }
+
+        /* Details Title Styling */
+        .details-title {
+            background-color: #f7f7f7;
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Petit Formal Script', cursive;
+            font-size: 40px;
+        }
+
+        /* Details Text Styling */
+        .details-text {
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Bona Nova', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin-top: 30px; /* Add margin above the footer */
+        }
+
+        .footer {
+            margin: 0; /* Reset margin for the footer text */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet"> <!-- Add Bona Nova font -->
+</head>
+<body>
+    <div id="header-container"></div> 
+    <script src="templates/header.js"></script>
+    <div class="top-image"></div>
+
+    <!-- Ceremony Section -->
+    <div class="container">
+        <div class="text left">
+            <h2 class="details-title">Ceremony</h2>
+            <p class="details-text">170 Del Largo, Many, LA 71449</p>
+            <a id="ceremonyMapLink" href="#" class="details-text" style="text-decoration: underline; display: block; text-align: center;" target="_blank" rel="noopener noreferrer">Map</a>
+        </div>
+        <img src="images/details1.JPG" alt="Image 1" class="right">
+    </div>
+
+    <!-- Reception Section -->
+    <div class="container">
+        <img src="images/details2.jpeg" alt="Image 2" class="left">
+        <div class="text right">
+            <h2 class="details-title">Reception</h2>
+            <p class="details-text">170 Del Largo, Many, LA 71449</p>
+            <a id="receptionMapLink" href="#" class="details-text" style="text-decoration: underline; display: block; text-align: center;" target="_blank" rel="noopener noreferrer">Map</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to detect iOS
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+    
+        // Set the appropriate map link based on the OS
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const appleMapsUrl = "https://maps.apple.com/?address=170%20Del%20Largo%20Dr,%20Many,%20LA%2071449";
+            const googleMapsUrl = "https://www.google.com/maps?q=170+Del+Largo+Dr,+Many,+LA+71449";
+    
+            // Ceremony Map Link
+            const ceremonyMapLink = document.getElementById('ceremonyMapLink');
+            if (ceremonyMapLink) {
+                ceremonyMapLink.href = isIOS() ? appleMapsUrl : googleMapsUrl;
+            }
+    
+            // Reception Map Link
+            const receptionMapLink = document.getElementById('receptionMapLink');
+            if (receptionMapLink) {
+                receptionMapLink.href = isIOS() ? appleMapsUrl : googleMapsUrl;
+            }
+        });
+    </script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">Designed by Luciano & Casey</div>
+    </footer>
+</body>
+</html>

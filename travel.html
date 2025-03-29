@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/pinetree.png" type="image/png">
+    <link rel="stylesheet" href="templates/style.css">
+    <style>
+        /* Top Image Section */
+        .top-image {
+            background-image: url('images/travel2.jpeg');
+            margin-top: 50px;
+ 
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+        }
+
+        /* App Icon Grid */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .app-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.05);
+        }
+
+        .app-icon img {
+            width: 160px;
+            height: 160px;
+            border-radius: 18px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .app-icon span {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            max-width: 80px;
+            word-wrap: break-word;
+        }
+
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Bona Nova', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin: 0;
+        }
+
+        .top-banner {
+            text-align: center;
+            margin: 30px 0;
+            font-family: 'Petit Formal Script', cursive;
+            font-size: 40px;
+        }
+        footer {
+                text-align: center;
+                padding: 20px;
+                font-family: 'Bona Nova', sans-serif;
+                background-color: #f7f7f7;
+                color: #333;
+            }
+
+        /* Accommodations Section - Horizontal Layout */
+        .accommodations-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .accommodations-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            gap: 30px;
+        }
+
+        .accommodation-card {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px;
+            background-color: #f7f7f7;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .accommodation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+
+        .accommodation-title {
+            font-family: 'Bona Nova', serif;
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accommodation-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .accommodation-text {
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .accommodation-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: 'Bona Nova', serif;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .accommodation-link:hover {
+            background-color: #555;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1000px) {
+            .accommodations-row {
+                flex-wrap: wrap;
+            }
+            .accommodation-card {
+                min-width: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .accommodation-card {
+                min-width: 100%;
+            }
+        }
+        
+    </style>
+    <link rel="stylesheet" href="/templates/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header-container"></div> 
+    <script src="templates/header.js"></script>
+    <div class="top-image"></div>
+
+    <div class="top-banner">
+        <h1>Travel & Stay</h1>
+    </div>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Your existing header content here -->
+
+    <div class="accommodations-container">
+        <div class="accommodations-row">
+            <!-- Hotel Card -->
+            <div class="accommodation-card">
+                <h3 class="accommodation-title">Hotel</h3>
+                <img src="images/hotel.jpeg" alt="Hotel Accommodations" class="accommodation-image">
+                <p class="accommodation-text">
+                    Our amazing wedding planner ~Honey Broussard~ , has arranged a discounted rate for yall!!! Call the reservation department at (877)519-1500, stating the group name as Broussard-Pinheiro wedding. Book the dates they require 11/7-11/9 =)
+                </p>
+                <a href="https://cypressbend.com" target="_blank" class="accommodation-link">Reserve Room</a>
+            </div>
+
+            <!-- Airbnb Card -->
+            <div class="accommodation-card">
+                <h3 class="accommodation-title">Airbnb</h3>
+                <img src="images/airbnb.jpg" alt="Airbnb Options" class="accommodation-image">
+                <p class="accommodation-text">
+                    If you're the Airbnb type, they have Cozy apartments and homes near the venue. Don't forget to check our address on the Details page, so you book something close to us!
+                </p>
+                <a href="https://tinyurl.com/3rmnuwrc" target="_blank" class="accommodation-link">Browse Listings</a>
+            </div>
+
+            <!-- VRBO Card -->
+            <div class="accommodation-card">
+                <h3 class="accommodation-title">VRBO</h3>
+                <img src="images/vrbo.png" alt="VRBO Rentals" class="accommodation-image">
+                <p class="accommodation-text">
+                    Perfect for families or groups wanting to stay together. Whole homes with full amenities available. Don't forget to check our address on the Details page, so you book something close to us!
+                </p>
+                <a href="https://t.vrbo.io/ssLIGHw35Rb" target="_blank" class="accommodation-link">View Rentals</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Your existing footer content here -->
+</body>
+    
+    <footer>
+        <div class="footer">Designed by Luciano & Casey</div>
+    </footer>
+
+</body>
+</html>
