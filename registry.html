@@ -84,6 +84,33 @@
                 background-color: #f7f7f7;
                 color: #333;
             }
+            @media (max-width: 768px) {
+            .top-image {
+                background-image: url('images/registry.jpeg');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 40vh;
+         
+            }
+
+            .app-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                max-width: 90%;
+                margin: 20px auto;
+            }
+
+            .app-icon img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .top-banner {
+                margin: 20px 0;
+                font-size: 32px;
+            }
+            }
     </style>
     <link rel="stylesheet" href="/templates/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">

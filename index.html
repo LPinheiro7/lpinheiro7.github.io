@@ -13,7 +13,7 @@
             /* MAIN CONTENT */
             .main-content {
                 background-image: url('images/homephoto.jpg');
-                background-size: cover; /* Ensure the image covers the entire screen */
+                background-size: contain; 
                 background-position: center;
                 background-repeat: no-repeat;
                 height: 120vh; /* Full height of the viewport */
@@ -39,11 +39,59 @@
                 height: 500px; /* Adjust height based on your preference */
                 background-image: url('images/bg3.png'); /* Background image */
                 background-repeat: no-repeat; /* Prevent background from repeating */
-                background-size: auto; /* Keep the background image at its original size */
+                background-size: contain; /* Keep the background image at its original size */
                 background-position: center; /* Center the background image */
                 padding: 20px; /* Add padding to create some space inside the container */
             }
+            @media (max-width: 768px) {
+            .main-content {
+                height: 300px;
+                background-size: cover;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 0; /* Ensure no extra space below */
+            }
+            
+            .text-image-container {
+                height: auto; /* Let content determine height */
+                min-height: 250px; /* Minimum height */
+                background-size: cover;
+                position: relative;
+                margin-top: 0; /* Remove negative margin */
+                padding: 40px 20px; /* Add proper padding */
+                z-index: 2;
 
+            }
+            
+            .text-names {
+                font-size: 40px !important; /* Force smaller size */
+                line-height: 1.3; /* Better spacing between lines */
+                font-family: 'Bona Nova', sans-serif;
+                text-transform: uppercase;
+                color: #333;
+                padding: 0;
+                margin-top: 50px;
+                margin-bottom: 0;
+                position: relative;
+                z-index: 3;
+            }
+            .text-date div {
+                text-align: center;
+                font-size: 40px;
+                font-family: 'Bona Nova', sans-serif;
+                text-transform: uppercase;
+                margin: 50px;
+                color: #333;
+            }
+            .timer {
+                text-align: center;
+                font-size: 28px;
+                color: #333;
+                font-family: 'Bona Nova', sans-serif;
+                margin: 50px;
+            }
+        }
+            
             .text-names {
                 font-size: 60px;
                 font-family: 'Bona Nova', sans-serif;
@@ -94,10 +142,26 @@
             }
 
             .footer {
-                        margin-top: 20px; /* Adjust this value to control the spacing */}
+                margin-top: 20px;
+                text-align: center; /* Center align all footer content */
+                width: 100%;
+                overflow: hidden; /* Prevent horizontal scrolling */
+            }
+
             footer img {
-                background-size: cover; /* Ensure the image covers the entire screen */
-                background-position: center;
+                display: block; /* Remove default inline spacing */
+                max-width: 100%; /* Ensure it doesn't exceed container */
+                height: auto; /* Maintain aspect ratio */
+                margin: 0 auto; /* Center horizontally */
+            }
+
+            @media (max-width: 768px) {
+                footer img {
+                    height: 300px;
+                    width: 100%; /* Full width on mobile */
+                    object-fit: cover; /* Better than background-size for img elements */
+                    object-position: center; /* Center the image */
+                }
             }
 
    </style>
@@ -116,9 +180,8 @@
         
         <div class="text-date">
             <div>November, 8 2025</div>
-            <button class = 'rsvp_bottom-btn'>RSVP</button>
         </div>
-        
+        <button class = 'rsvp_bottom-btn' onclick="window.location.href='rsvp.html'">RSVP</button>
         
         <!-- Timer Section -->
         <div class="timer" id="countdown-timer">

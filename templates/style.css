@@ -155,3 +155,132 @@ footer {
     color: #333;
     margin-top: 30px;
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .top-banner {
+        background-color: #f7f7f7;
+        color: #333;
+        margin-top: 50px;
+        text-align: center;
+        padding: 20px 0;
+        font-family: 'Petit Formal Script', cursive;
+        font-size: 70px;
+    }
+
+    .navbar-container {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        width: 100%;
+        background-color: white; /* Match your design */
+    }
+    
+    .navbar-container.active {
+        max-height: 500px; /* Adjust based on your menu content height */
+    }
+    
+    .nav-list {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 15px; /* Space between items */
+        padding: 20px 0;
+    }
+
+    .nav-list li {
+        width: 100%; /* Make each item full width */
+        text-align: center; /* Center the text */
+    }
+
+    .nav-list a {
+        display: block; /* Make entire area clickable */
+        padding: 10px 0; /* Add vertical padding */
+    }
+    
+    .hamburger-btn {
+        color: #333;
+        display: block;
+        /* Your existing hamburger button styles */
+    }
+
+    .rsvp-btn, .date-btn {
+        position: fixed;
+        bottom: 20px;
+        z-index: 1000;
+        height: 40px; /* Reset height */
+        padding: 10px 15px; /* Adjust padding */
+        line-height: normal; /* Prevent vertical stretching */
+        white-space: nowrap; /* Keep text on one line */
+        margin-bottom: 70px; /* Remove default margins */
+        width: auto; /* Let width adjust to content */
+        max-width: 45%; /* Prevent over-stretching */
+    }
+
+    .rsvp-btn {
+        right: 20px;
+    }
+
+    .date-btn {
+        left: 20px;
+    }
+
+    
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .hamburger-btn {
+        display: none;
+    }
+
+    .navbar-container {
+        display: block;
+    }
+
+    .nav-list {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+/* Shared styles */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Bona Nova', serif;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .navbar-container {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        width: 100%;
+        background-color: white; /* Match your design */
+    }
+    
+    .navbar-container.active {
+        max-height: 500px; /* Adjust based on your menu content height */
+    }
+    
+    .nav-list {
+        padding: 20px;
+        margin: 0;
+        list-style: none;
+    }
+    
+    .hamburger-btn {
+        display: block;
+        /* Your existing hamburger button styles */
+    }
+}
+
