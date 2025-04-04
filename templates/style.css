@@ -201,6 +201,11 @@ footer {
     .hamburger-btn {
         color: #333;
         display: block;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
         /* Your existing hamburger button styles */
     }
 
@@ -258,29 +263,5 @@ footer {
     font-family: 'Bona Nova', serif;
 }
 
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
-    .navbar-container {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        width: 100%;
-        background-color: white; /* Match your design */
-    }
-    
-    .navbar-container.active {
-        max-height: 500px; /* Adjust based on your menu content height */
-    }
-    
-    .nav-list {
-        padding: 20px;
-        margin: 0;
-        list-style: none;
-    }
-    
-    .hamburger-btn {
-        display: block;
-        /* Your existing hamburger button styles */
-    }
-}
+
 
