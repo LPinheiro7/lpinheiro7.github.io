@@ -382,26 +382,41 @@
         });
         
         function submitRSVP(responses, email, question, foodRestriction) {
-            fetch('https://script.google.com/macros/s/AKfycbxmXChZaMdPurO7RwqBEUUXvz8bWp47WzqZ1eRGf7Ml-E_uSN4bj6RF8Zp9OYU2v23oqg/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify({
-                    responses, // array of { name, response }
-                    email,
-                    question,
-                    foodRestriction
-                }),
-                headers: { 'Content-Type': 'application/json' }
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    alert('RSVP saved successfully!');
-                } else {
-                    alert('Error saving RSVP.');
-                }
-            })
-            .catch(err => console.error('Error:', err));
+        // Client-side name check
+        const submittedNames = responses.map(r => r.name.toLowerCase().trim());
+        const storedNames = JSON.parse(localStorage.getItem('rsvp_names') || '[]');
+        
+        const duplicate = submittedNames.some(name => 
+            storedNames.includes(name)
+        );
+        
+        if (duplicate) {
+            alert('One or more guests have already RSVPed!');
+            return;
+        }
+
+        fetch('https://script.google.com/macros/s/AKfycbxmXChZaMdPurO7RwqBEUUXvz8bWp47WzqZ1eRGf7Ml-E_uSN4bj6RF8Zp9OYU2v23oqg/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify({
+            responses,
+            email,
+            question,
+            foodRestriction
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        .then(() => {
+            // Store names in localStorage
+            const allNames = [...storedNames, ...submittedNames];
+            localStorage.setItem('rsvp_names', JSON.stringify(allNames));
+            
+            alert('RSVP submitted successfully!');
+        })
+        .catch(err => {
+            console.error('Error:', err);
+            alert('Thank you! If this was new, we received your RSVP.');
+        });
         }
 
         submitBtn.addEventListener('click', () => {
