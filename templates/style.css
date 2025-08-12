@@ -104,6 +104,26 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* FIND YOUR RSVP BUTTON */
+.find-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid #6f6f6f;
+    color: #6f6f6f;
+    font-family: 'Bona Nova', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.find-btn:hover {
+    background-color: #6f6f6f;
+    color: white;
+}
+
+
 /* DATE BUTTON */
 .date-btn {
     position: fixed;

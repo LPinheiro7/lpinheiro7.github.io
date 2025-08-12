@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/pinetree.png" type="image/png">
     <link rel="stylesheet" href="templates/style.css">
-    <style>
+</head>
+
+<style>
         /* Top Image Section */
         .top-image {
             margin-top: 25px;
-            background-image: url('images/underconstruction1.jpg');
+            background-image: url('images/rsvp.JPG');
             background-size: contain; /* Fit the image within the container */
             background-position: center;
             background-repeat: no-repeat;
@@ -49,39 +51,93 @@
         .right {
             order: 2;
         }
+        .find-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: transparent;
+            border: 2px solid #6f6f6f;
+            color: #6f6f6f;
+            font-family: 'Bona Nova', sans-serif;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-        /* Details Title Styling */
-        .details-title {
+        .find-btn:hover {
+            background-color: #6f6f6f;
+            color: white;
+        }
+        
+        .modal-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: transparent;
+            border: 2px solid #6f6f6f;
+            color: #6f6f6f;
+            font-family: 'Bona Nova', sans-serif;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .modal-btn:hover {
+            background-color: #6f6f6f;
+            color: white;
+        }
+        
+        .submit-btn {
+            margin-top: 30px;
+            padding: 20px 40px;
+            font-size: 16px;
+            background-color: transparent;
+            border: 2px solid #6f6f6f;
+            color: #6f6f6f;
+            font-family: 'Bona Nova', sans-serif;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #6f6f6f;
+            color: white;
+        }
+        
+        /* RSVP Title Styling */
+        .rsvp-title {
             background-color: #f7f7f7;
             color: #333;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Ensures everything is centered horizontally */
+            gap: 15px; /* Space between images and text */
             padding: 20px 0;
             font-family: 'Petit Formal Script', cursive;
             font-size: 40px;
         }
 
+        /* Small images for aesthetic detail */
+        .rsvp-icon {
+            height: 20px;   /* Adjust to your liking */
+            width: auto;    /* Keep aspect ratio */
+        }
+
+
         /* Details Text Styling */
-        .details-text {
+        .body-text {
             text-align: center;
             font-size: 20px;
             line-height: 1.6;
             color: #555;
-        }
-        .construction-message {
-            font-family: 'Bona Nova', sans-serif;
-            font-size: 20px;
-            text-align: center;
-            color: #333;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #f7f7f7;
-
+            
         }
 
         /* Footer Styling */
         footer {
             text-align: center;
-            padding: 20px;
+            padding-top: 40px;
             font-family: 'Bona Nova', sans-serif;
             background-color: #f7f7f7;
             color: #333;
@@ -91,15 +147,332 @@
         .footer {
             margin: 0; /* Reset margin for the footer text */
         }
-    </style>
+        /* Footer Image Section */
+        .footer-image {
+            padding-bottom: 40px;
+            background-image: url('images/rsvp_bottom.jpg');
+            background-size: contain;  /* Same as top image */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 60vh;  /* Same height as top image */
+        }
+
+        @media (max-width: 768px) {
+            .details-title {
+                background-color: #f7f7f7;
+                color: #333;
+                text-align: center;
+                padding: 20px 0;
+                font-family: 'Petit Formal Script', cursive;
+                font-size: 30px !important
+            }
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            }
+            .top-image {
+            background-image: url('images/lakehousesketch.png');
+            background-size: contain; /* Fit the image within the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 20vh; /* Adjust height as needed */
+            margin-bottom:60px !important
+        }
+        }
+</style>
+
     <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet"> <!-- Add Bona Nova font -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
     <div id="header-container"></div> 
     <script src="templates/header.js"></script>
-    <div class="top-image"></div>
 
+    <div class="top-image"></div>
+    <h2 class="rsvp-title">
+    <img src="images/Accent_Left.png" alt="Left Flourish" class="rsvp-icon">
+    RSVP
+    <img src="images/Accent_Right.PNG" alt="Right Flourish" class="rsvp-icon">
+    </h2>
+
+    <h2 class="body-text">Please RSVP by <u>October 1st</u> so we can reserve your spot! <br> Kindly respond for each member of your party.</h2>
+
+    <div style="text-align:center; margin-top: 30px;">
+        <input type="text" id="nameInput" placeholder="Enter the Name on your invitation" style="padding:10px; width: 300px;">
+        <br>
+        <button id="findBtn" class="find-btn">Find your RSVP</button>
+        <div id="guestList" style="margin-top: 20px;"></div>
+        <button id="submitBtn" class="submit-btn"style="display: none;">Submit RSVP</button>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+        background: rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:1000;">
+    <div style="background:#fff; padding:20px; border-radius:8px; max-width:400px; width:90%;">
+        <h3>Confirm Your RSVP</h3>
+        <div id="summaryContent" style="margin-bottom: 20px; white-space: pre-wrap;"></div>
+        <button id="confirmSubmitBtn" class="find-btn" style="margin-right:10px;">Submit</button>
+        <button id="cancelSubmitBtn" class="find-btn">Cancel</button>
+
+    </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script>
+        let guestData = [];
+
+        fetch('guests.csv')
+            .then(response => response.text())
+            .then(csv => {
+                Papa.parse(csv, {
+                    header: true,
+                    complete: function(results) {
+                        guestData = results.data;
+                    }
+                });
+            });
+
+        const nameInput = document.getElementById('nameInput');
+        const findBtn = document.getElementById('findBtn');
+        const guestList = document.getElementById('guestList');
+        const submitBtn = document.getElementById('submitBtn');
+
+        let lastValue = "";
+
+        nameInput.addEventListener('input', (e) => {
+            const input = nameInput.value;
+            const isDeleting = input.length < lastValue.length;
+            const cursorAtEnd = nameInput.selectionStart === input.length;
+
+            // If user is backspacing and there's a highlighted suggestion, clear it
+            if (isDeleting && nameInput.selectionStart !== nameInput.selectionEnd) {
+                nameInput.value = input.slice(0, nameInput.selectionStart);
+                lastValue = nameInput.value;
+                return;
+            }
+
+            lastValue = input;
+
+            if (!input || isDeleting || !cursorAtEnd) {
+                return;
+            }
+
+            const match = guestData.find(g =>
+                g.name.toLowerCase().startsWith(input.toLowerCase())
+            );
+
+            if (match && input.length < match.name.length) {
+                nameInput.value = input + match.name.slice(input.length);
+                nameInput.setSelectionRange(input.length, match.name.length);
+            }
+        });
+
+        // Add keydown listener to handle backspace/delete
+        nameInput.addEventListener('keydown', (e) => {
+            if ((e.key === 'Backspace' || e.key === 'Delete') && 
+                nameInput.selectionStart !== nameInput.selectionEnd) {
+                // Prevent the default behavior so we can handle it in the input event
+                e.preventDefault();
+                const start = nameInput.selectionStart;
+                nameInput.value = nameInput.value.slice(0, start);
+                nameInput.setSelectionRange(start, start);
+            }
+        });
+
+
+        findBtn.addEventListener('click', () => {
+            const typedName = nameInput.value.trim().toLowerCase();
+            const match = guestData.find(g => g.name.toLowerCase() === typedName);
+            guestList.innerHTML = '';
+            submitBtn.style.display = 'none';
+
+            if (!match) {
+                guestList.innerHTML = `<p style="color:red;">No match found. Please check the name or contact us.</p>`;
+                return;
+            }
+
+            const partyGuests = guestData.filter(g => g.party_id === match.party_id);
+
+            // Add greeting with dynamic count
+            const greeting = document.createElement('p');
+            const numberWords = {
+            1: 'one',
+            2: 'two',
+            3: 'three',
+            4: 'four',
+            5: 'five',
+            6: 'six',
+            7: 'seven',
+            8: 'eight',
+            9: 'nine',
+            10: 'ten'
+            };
+
+            const count = partyGuests.length;
+            const countWord = count === 1 ? 'spot' : 'spots';
+            const countText = numberWords[count] || count.toString();
+            greeting.textContent = `We've found you! We've reserved ${count} (${countText}) ${countWord} for your party.`;
+            greeting.classList.add('body-text');
+            greeting.style.marginBottom = '10px';
+            guestList.appendChild(greeting);
+
+            // Add Guest(s) header
+            const header = document.createElement('h3');
+            header.style.textDecoration = 'underline';
+            header.textContent = 'Guests';
+            header.classList.add('body-text'); 
+            guestList.appendChild(header);
+
+            partyGuests.forEach((guest, index) => {
+                const container = document.createElement('div');
+                container.style.marginBottom = '15px';
+                container.innerHTML = `
+                        <strong class="body-text">${guest.name}</strong><br>
+                        <label class="body-text"><input type="radio" name="guest_${index}" value="coming" required> Will Attend </label>
+                        <label class="body-text" style="margin-left: 20px;"><input type="radio" name="guest_${index}" value="not_coming"> Will Not Attend</label>
+                    `;
+                guestList.appendChild(container);
+            });
+            // Utility function to add a labeled input section
+            function addLabeledInputSection(title, labelText, placeholder) {
+                const header = document.createElement('h3');
+                header.textContent = title;
+                header.classList.add('body-text');
+                header.style.textDecoration = 'underline';
+                guestList.appendChild(header);
+
+                const row = document.createElement('div');
+                row.style.display = 'flex';
+                row.style.alignItems = 'center';
+                row.style.justifyContent = 'center';
+                row.style.gap = '10px';
+                row.style.marginTop = '5px';
+                row.style.marginBottom= '30px'
+
+                const label = document.createElement('label');
+                const inputId = title.toLowerCase().replace(/\s+/g, '') + 'Input';
+                label.setAttribute('for', inputId);
+                label.textContent = labelText;
+                label.classList.add('body-text');
+
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.id = inputId;
+                input.name = inputId;
+                input.placeholder = placeholder;
+                input.style.padding = '8px';
+                input.style.width = '250px';
+
+                row.appendChild(label);
+                row.appendChild(input);
+                guestList.appendChild(row);
+            }
+
+            // Add all three sections
+            addLabeledInputSection('Contact', 'Email', 'Enter your email');
+            addLabeledInputSection('Question', 'Question', 'Ask us something');
+            addLabeledInputSection('Food Restriction', 'Restriction', 'Let us know');
+
+
+
+            submitBtn.style.display = 'inline-block';
+        });
+        
+        function submitRSVP(responses, email, question, foodRestriction) {
+            fetch('https://script.google.com/macros/s/AKfycbxmXChZaMdPurO7RwqBEUUXvz8bWp47WzqZ1eRGf7Ml-E_uSN4bj6RF8Zp9OYU2v23oqg/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify({
+                    responses, // array of { name, response }
+                    email,
+                    question,
+                    foodRestriction
+                }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('RSVP saved successfully!');
+                } else {
+                    alert('Error saving RSVP.');
+                }
+            })
+            .catch(err => console.error('Error:', err));
+        }
+
+        submitBtn.addEventListener('click', () => {
+            const radios = guestList.querySelectorAll('input[type="radio"]:checked');
+            if (radios.length === 0) {
+                alert("Please respond for each guest.");
+                return;
+            }
+
+            // Gather responses for each guest
+            const responses = Array.from(radios).map(radio => ({
+                name: radio.closest('div').querySelector('strong').textContent,
+                response: radio.value === 'coming' ? 'Will Attend' : 'Will Not Attend'
+            }));
+
+            // Get contact inputs
+            const email = document.getElementById('contactInput')?.value || '';
+            const question = document.getElementById('questionInput')?.value || '';
+            const foodRestriction = document.getElementById('foodrestrictionInput')?.value || '';
+
+            // Build summary text
+            let summaryText = '';
+            responses.forEach(r => {
+                summaryText += `${r.name}: ${r.response}\n`;
+            });
+            summaryText += `\nEmail: ${email}\nQuestion: ${question}\nFood Restriction: ${foodRestriction}`;
+
+            // Store for confirm
+            submitBtn.dataset.responses = JSON.stringify(responses);
+            submitBtn.dataset.email = email;
+            submitBtn.dataset.question = question;
+            submitBtn.dataset.foodRestriction = foodRestriction;
+
+            // Show modal
+            document.getElementById('summaryContent').textContent = summaryText;
+            document.getElementById('confirmationModal').style.display = 'flex';
+            submitBtn.disabled = true;
+        });
+
+        // Confirm button inside modal
+        document.getElementById('confirmSubmitBtn').addEventListener('click', () => {
+            const responses = JSON.parse(submitBtn.dataset.responses);
+            const email = submitBtn.dataset.email;
+            const question = submitBtn.dataset.question;
+            const foodRestriction = submitBtn.dataset.foodRestriction;
+
+            // Send to backend
+            submitRSVP(responses, email, question, foodRestriction);
+
+            // Reset form
+            alert("Thank you for your RSVP!");
+            guestList.innerHTML = '';
+            nameInput.value = '';
+            submitBtn.style.display = 'none';
+            submitBtn.disabled = false;
+            document.getElementById('confirmationModal').style.display = 'none';
+        });
+
+        // Cancel button inside modal
+        document.getElementById('cancelSubmitBtn').addEventListener('click', () => {
+            document.getElementById('confirmationModal').style.display = 'none';
+            submitBtn.disabled = false;
+
+   
+        });
+    </script>
+
+    <footer>
+        <div class="footer-image"></div>
+        <div class="footer">Designed by Luciano & Casey</div>
+    </footer>
 
 </body>
 </html>
