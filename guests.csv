@@ -6,7 +6,6 @@
 2,Crawford Chapin
 3,Allan Arruzzo
 4,Carolina Aguiar
-5,Alan Arruzzo
 6,Tyler Bascle
 7,Carlos Bittencourt
 7,Jessika Moura
@@ -15,20 +14,22 @@
 9,Codey Boutte 
 10,Larissa Braga
 11,Gabriella Brancaccio
+11,Andre Roberto Franco
 12,Connor Brogdon
+12,Carson McHugh
 13,Alexis Broussard
-16,Austin Broussard
+13,Hayden Broussard
 14,Carl Broussard
+14,Monica Broussard
 15,Conner Broussard
 15,Cory Broussard
-17,Gloria Broussard
-13,Hayden Broussard
-14,Monica Broussard
 15,Rebecca Broussard
-18,Seth Broussard
+16,Austin Broussard
 16,Sydney Broussard
-19,Chelsea Bryant
+17,Gloria Broussard
+18,Seth Broussard
 18,Erin Broussard
+19,Chelsea Bryant
 20,Mckayla Burnstad
 20,Guest
 21,Shane Candies
@@ -40,40 +41,30 @@
 24,Mark Alexander
 25,Beth Conner
 25,Stephen Conner
+25,Jack  Flynn
+25,Guest
 26,Jenn Cusimano
 26,Kelly Cusimano
+26,Alan Fong Abud
+26,Emi Sato
 27,Pawel Czekaj
 27,Dona Czekaj
+27,Jesse Foy
 28,Matt Dalton
 29,Glenda David
 29,Glenn David
+29,Anna Frey
+29,John Frey
 30,Jamie DeHart
+30,Timothy Serrette 
 31,Jevon  DeHart
 31,Kelsie DeHart
 32,Jordan DeHart 
-32,Drugie
+32,Guest
 33,Cathy Desormeaux
 33,Clarance Desormeaux
 34,Christina Drew
 34,Troy Drew
-25,Jack  Flynn
-25,Guest
-26,Alan Fong Abud
-26,Emi Sato
-27,Jesse Foy
-28,Debbie Fralix
-11,Andre Roberto Franco
-29,Anna Frey
-30,Debi Frey
-29,John Frey
-30,Kenny Frey
-31,Candice Gardiner
-32,Mackenzie Gardiner
-33,Stacy Gardiner
-32,Guest
-34,Carol Garding
-34,Mike Garding
-33,Troy Gardiner
 35,Josh Goff
 35,Shannon Goff
 36,Till Grüning
@@ -107,26 +98,24 @@
 51,Emna Mallek
 51,Moadh Mallek
 52,Caroline Mallon
+52,Ruari Mallon
 53,Darragh Mallon
 53,Ellie Mallon
 54,Gill Mallon
-55,Laura  Mallon
 54,Liam Mallon
-52,Ruari Mallon
+55,Laura  Mallon
 55,KC Al Karawi
 56,Rodrigo Marques
 57,Filipe Martins
 57,Thays Andrade
-69,Vince Anthony Matassa 
 58,Brittany Matzke
 58,Richie Matzke
 59,Ed McAllister
 59,Jodi McAllister 
-12,Carson McHugh
 60,Connor McHugh
+60,Shawni McHugh
 61,Denis McHugh
 61,Kim McHugh
-60,Shawni McHugh
 62,Linda McKinney
 62,Mark McKinney
 63,Jose Meraz
@@ -140,14 +129,15 @@
 67,Natalia Rodrigues
 68,Sue Park
 68,Michael Tran
+69,Vince Anthony Matassa 
 69,Autumn Pearce Matassa
 70,Ashley Peoples
 70,Michael Peoples
 71,Courtney Picard
+71,Trevor Picard
 72,Jason Picard
 72,Rose Picard
 73,Shelbi Picard
-71,Trevor Picard
 73,Luke Kennedy
 74,Manuel Pichardo Marcano - Manny
 75,Olina  Pinheiro
@@ -162,7 +152,6 @@
 81,Adalia Schenk 
 82,Kim Scruggs
 82,Roy Scruggs
-30,Timothy Serrette 
 83,Natalie Sharkey
 83,Peter Horn III
 84,Ashley Shearer
@@ -174,11 +163,10 @@
 89,Luciene Soares
 90,Alex Sorapuru
 90,Chris Alfieri
-31,Jesse Stephens
 91,Wendy Stouffer
 92,Derek Touchet
-93,Donna Touchet
 92,Kristi Touchet
+93,Donna Touchet
 94,Shadi Turki
 94,Dema Alqudag
 95,Sydney Jones
@@ -188,8 +176,8 @@
 97,Raul Velesquez
 97,Maria Nieto
 98,Debi Vincent 
-99,Dylan (Trey Brother) Vincent 
 98,Tim Vincent 
+99,Dylan (Trey Brother) Vincent 
 100,Trey Vincent 
 101,Patrick Wiltse
 101,Stephanie Wiltse
@@ -200,7 +188,18 @@
 104,Amine Meziou
 104,Guest
 105,Shanan Horne
-106,Angela Horne
-107,Jennifer Puac Puac 
+105,Angela Horne
+107,Jennifer Puac
 107,Zach Cardenas
 108,Leandro Pessanha 
+106,Debbie Fralix
+109,Debi Frey
+109,Kenny Frey
+110,Candice Gardiner
+110,Jesse Stephens
+111,Mackenzie Gardiner
+111,Guest
+112,Stacy Gardiner
+112,Troy Gardiner
+113,Carol Garding
+113,Mike Garding
