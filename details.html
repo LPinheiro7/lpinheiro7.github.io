@@ -113,19 +113,29 @@
 
         /* Mobile styles */
         @media (max-width: 768px) {
+            .top-image {
+                background-image: url('images/lakehousesketch.png');
+                background-size: contain;
+                background-position: center top; /* Align to top */
+                background-repeat: no-repeat;
+                width: 100%; /* Full width */
+                height: 0; /* Collapse the container */
+                padding-top: 75%; /* Adjust this based on your image's aspect ratio */
+                margin: 0;
+            }
+            
             .body-image {
                 background-image: url('images/detailsb.png');
                 background-size: contain;
-                background-position: top center; /* Align it to the top */
+                background-position: center top; /* Align to top */
                 background-repeat: no-repeat;
-                /* REMOVE height: 200vh */ 
-                width: 100vw; /* Full viewport width */
+                width: 100%; /* Full width */
                 height: 0; /* Collapse the container */
-                padding-top: 100%; /* Magic: creates height based on width */
-                margin: 0; /* Remove any default margins */
-                display: block;
+                padding-top: 50%; /* Adjust this based on your image's aspect ratio */
+                margin: 0;
             }
         }
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet"> <!-- Add Bona Nova font -->
