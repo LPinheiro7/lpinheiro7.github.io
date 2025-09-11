@@ -112,15 +112,20 @@
         }
 
         /* Mobile styles */
-        @media (max-width: 768px){
-                .body-image {
-            background-image: url('images/detailsb.png');
-            background-size: contain; /* Fit the image within the container */
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 200vh; /* Adjust height as needed */
-        }}
-
+        @media (max-width: 768px) {
+            .body-image {
+                background-image: url('images/detailsb.png');
+                background-size: contain;
+                background-position: top center; /* Align it to the top */
+                background-repeat: no-repeat;
+                /* REMOVE height: 200vh */ 
+                width: 100vw; /* Full viewport width */
+                height: 0; /* Collapse the container */
+                padding-top: 100%; /* Magic: creates height based on width */
+                margin: 0; /* Remove any default margins */
+                display: block;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet"> <!-- Add Bona Nova font -->
