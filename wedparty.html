@@ -8,12 +8,18 @@
     <style>
         /* Top Image Section */
         .top-image {
-            margin-top: 25px;
-            background-image: url('images/underconstruction1.jpg');
+            background-image: url('images/wedparty.png');
+            background-size: contain; /* Fit the image within the container */
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 200vh; /* Adjust height as needed */
+        }
+        .body-image {
+            background-image: url('images/detailsb.png');
             background-size: contain; /* Fit the image within the container */
             background-position: center;
             background-repeat: no-repeat;
-            height: 60vh; /* Adjust height as needed */
+            height: 500vh; /* Adjust height as needed */
         }
 
         /* Body Styling */
@@ -67,16 +73,6 @@
             line-height: 1.6;
             color: #555;
         }
-        .construction-message {
-            font-family: 'Bona Nova', sans-serif;
-            font-size: 20px;
-            text-align: center;
-            color: #333;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #f7f7f7;
-
-        }
 
         /* Footer Styling */
         footer {
@@ -91,6 +87,29 @@
         .footer {
             margin: 0; /* Reset margin for the footer text */
         }
+        @media (max-width: 768px) {
+            .details-title {
+                background-color: #f7f7f7;
+                color: #333;
+                text-align: center;
+                padding: 20px 0;
+                font-family: 'Petit Formal Script', cursive;
+                font-size: 30px !important
+            }
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            }
+            .top-image {
+            background-image: url('images/lakehousesketch.png');
+            background-size: contain; /* Fit the image within the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 20vh; /* Adjust height as needed */
+            margin-bottom:60px !important
+        }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet"> <!-- Add Bona Nova font -->
@@ -100,6 +119,33 @@
     <script src="templates/header.js"></script>
     <div class="top-image"></div>
 
-
+    <script>
+        // Function to detect iOS
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+    
+        // Set the appropriate map link based on the OS
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const appleMapsUrl = "https://maps.apple.com/?address=170%20Del%20Largo%20Dr,%20Many,%20LA%2071449";
+            const googleMapsUrl = "https://www.google.com/maps?q=170+Del+Largo+Dr,+Many,+LA+71449";
+    
+            // Ceremony Map Link
+            const ceremonyMapLink = document.getElementById('ceremonyMapLink');
+            if (ceremonyMapLink) {
+                ceremonyMapLink.href = isIOS() ? appleMapsUrl : googleMapsUrl;
+            }
+    
+            // Reception Map Link
+            const receptionMapLink = document.getElementById('receptionMapLink');
+            if (receptionMapLink) {
+                receptionMapLink.href = isIOS() ? appleMapsUrl : googleMapsUrl;
+            }
+        });
+    </script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">Designed by Luciano & Casey</div>
+    </footer>
 </body>
 </html>
